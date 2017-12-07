@@ -1,7 +1,7 @@
 ## 1. Integration Instructions
 
 ### 1.1 Request URL
-https://pa-report.zplayads.com
+https://pa-report-en.zplayads.com
 
 ### 1.2 Requirements
 * Account approved
