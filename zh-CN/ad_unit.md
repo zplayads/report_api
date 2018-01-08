@@ -22,8 +22,9 @@ app_id | string | path | 应用id
     "data": [
         {
             "app_id": "B5022775-02DA-C2DD-1182-C68CBFE3BD21",
-            "place_id": "769974F8-BBEE-989C-FC53-ECBAC158D2C0",
-            "name": "test-adplace"
+            "ad_unit_id": "769974F8-BBEE-989C-FC53-ECBAC158D2C0",
+            "name": "test-adplace",
+            "ad_type": "4"
         }
     ]
 }
@@ -33,6 +34,7 @@ app_id | string | path | 应用id
 
 名称 | 数据类型 | 说明
 ---|---|--
-ad_unit_id | string | 广告位id
 app_id | string | 应用id
+ad_unit_id | string | 广告位id
 name | string | 广告位名称
+ad_type | enum | 广告类型:1=>插屏,4=>视频
