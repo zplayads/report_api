@@ -33,6 +33,7 @@ app_id | string | path | 应用id
 
 名称 | 数据类型 | 说明
 ---|---|--
-ad_unit_id | string | 广告位id
 app_id | string | 应用id
+ad_unit_id | string | 广告位id
 name | string | 广告位名称
+ad_type | enum | 广告类型:1=>插屏,4=>视频
