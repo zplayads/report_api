@@ -136,8 +136,9 @@ app_id | string | path | App id
     "data": [
         {
             "app_id": "B5022775-02DA-C2DD-1182-C68CBFE3BD21",
-            "place_id": "769974F8-BBEE-989C-FC53-ECBAC158D2C0",
-            "name": "test-adplace"
+            "ad_unit_id": "769974F8-BBEE-989C-FC53-ECBAC158D2C0",
+            "name": "test-adplace",
+            "ad_type": "4"
         }
     ]
 }
@@ -147,9 +148,10 @@ app_id | string | path | App id
 
 Name | Data Type | Description
 ---|---|--
-ad_unit_id | string | Ad Unit id, you can get Ad Unit id on ZPLAY Ads 
 app_id | string | App id
+ad_unit_id | string | Ad Unit id, you can get Ad Unit id on ZPLAY Ads
 name | string | Ad Unit Name
+ad_type|enum|Ad type: 1=>Interstitial, 4=>Rewarded Video
 
 
 
