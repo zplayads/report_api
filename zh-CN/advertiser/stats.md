@@ -56,7 +56,7 @@ list | array | 统计数据列表
 名称 | 数据类型 | 说明
 ---|---|--
 date | int | 日期
-ad_id | string | 广告位id
+ad_id | string | 广告id
 imp | int | 展示
 active | int | 激活
 cost | float | 消耗
