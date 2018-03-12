@@ -4,7 +4,7 @@
 
 url | method | 说明
 ---|---|--
-advertiser/{advertiser_account_id}/app/{app_id}/ads | GET | 获取某应用下的广告位列表
+advertiser/{advertiser_account_id}/app/{app_id}/ads | GET | 获取某应用下的广告列表
 
 ## 请求参数
 
@@ -32,5 +32,5 @@ app_id | string | path | 应用id
 
 名称 | 数据类型 | 说明
 ---|---|--
-ad_id | string | 广告位id
-name | string | 广告位名称
+ad_id | string | 广告id
+name | string | 广告名称
