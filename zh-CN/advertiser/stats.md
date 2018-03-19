@@ -35,7 +35,6 @@ end_date | int | query | 结束日期,非必填,时间格式为:Ymd,示例: 2017
                 "click": 3909,
                 "cost": 211400,
                 "ctr": 0.88,
-                "ecpm": 47752.43,
                 "cpc": 54.08,
                 "cpi": 61.83
             }
@@ -61,6 +60,5 @@ imp | int | 展示
 active | int | 激活
 cost | float | 消耗
 ctr | string | 点击通过率
-ecpm | float | ecpm
 cpc | float | cpc
 cpi | float | cpi
