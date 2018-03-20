@@ -9,7 +9,7 @@ https://pa-report.zplayads.com
 
 ### Interface style 
 * restfull api
-* •	Use http status code to indicate the status of request resources
+* Use http status code to indicate the status of request resources
 
 ### Interface limitation
 * Signature is used to verify permission
