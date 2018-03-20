@@ -59,6 +59,6 @@ ad_id | string | 广告id
 imp | int | 展示
 active | int | 激活
 cost | float | 消耗
-ctr | string | 点击通过率(千分比)
+cvr | string | 激活率(千分比)
 cpc | float | cpc
 cpi | float | cpi
