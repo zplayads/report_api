@@ -58,6 +58,7 @@ date | int | 日期
 ad_id | string | 广告id
 imp | int | 展示
 active | int | 激活
+click | int | 点击
 cost | float | 消耗
 cvr | string | 激活率(千分比)
 cpc | float | cpc
