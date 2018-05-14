@@ -1,7 +1,7 @@
 # Interface Integration Instruction
 
 ### Interface address
-https://pa-report.zplayads.com
+https://pa-report-en.zplayads.com
 
 ### Integration prerequisites
 * Account has been approved
