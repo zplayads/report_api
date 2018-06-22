@@ -17,6 +17,7 @@ page | int | query | 页码 非必填,默认为1
 size | int | query | 数量 非必填,默认为20,不可以超过50 
 start_date | int | query | 开始日期,非必填,时间格式为:Ymd,示例: 20171106
 end_date | int | query | 结束日期,非必填,时间格式为:Ymd,示例: 20171106
+tz | int | query | 时区，非必填，默认8,示例: -4、6 等
 
 ## 响应
 ### 示例
