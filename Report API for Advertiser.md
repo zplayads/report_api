@@ -169,6 +169,7 @@ page | int | query | page number, optional, default is 1
 size | int | query | quantity, optional, default is 20, maximum is 50.
 start_date | int | query | Date starts, optional, format is YMD, eg: 20171106
 end_date | int | query | Date finishes, optional, format is YMD, eg: 20171106
+tz | int | query | Time Zone，Optional，default is 8. For example, 0, 1, -8, etc
 
 ## Response 
 ### Example
