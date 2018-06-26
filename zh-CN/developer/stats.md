@@ -16,6 +16,9 @@ page | int | query | 页码 非必填,默认为1
 size | int | query | 数量 非必填,默认为20,不可以超过50 
 start_date | int | query | 开始日期,非必填,时间格式为:Ymd,示例: 20171106
 end_date | int | query | 结束日期,非必填,时间格式为:Ymd,示例: 20171106
+tz | int | query | 时区，非必填，默认8,示例: -4、6 等
+group_dimension | string | query | 分组维度，非必填，默认空,示例: country
+
 
 ## 响应
 ### 示例
@@ -30,6 +33,7 @@ end_date | int | query | 结束日期,非必填,时间格式为:Ymd,示例: 2017
                 "date": 20171005,
                 "app_id": "80183BCF-6B19-0C8D-AC00-112DA4AEF846",
                 "ad_unit_id": "818D83B1-20D6-EEC4-47C9-A6E6CCB3A17A",
+                "country": "CA",
                 "play_start": 3386,
                 "play_finish": 2956,
                 "imp": 4095,
