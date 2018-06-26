@@ -173,6 +173,8 @@ page | int | query | Page number, optional, defaults 1
 size | int | query | The number of data, optional, Defaults 20, no more than 50 
 start_date | int | query | Start Date, optional, time format: Ymd, Sample: 20171106
 end_date | int | query | End Date, optional, time format:Ymd, Sample: 20171106
+tz | int | query | Time Zone，Optional，default is 8. Sample: 0, 1, -8, etc
+group_dimension | string | query | group by dimension，Optional，default is null ,Sample: country
 
 ### 4.3 Response
 #### Sample
@@ -187,6 +189,7 @@ end_date | int | query | End Date, optional, time format:Ymd, Sample: 20171106
                 "date": 20171005,
                 "app_id": "80183BCF-6B19-0C8D-AC00-112DA4AEF846",
                 "ad_unit_id": "818D83B1-20D6-EEC4-47C9-A6E6CCB3A17A",
+                "country": "CA",
                 "play_start": 3386,
                 "play_finish": 2956,
                 "imp": 4095,
