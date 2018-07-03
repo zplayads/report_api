@@ -13,7 +13,6 @@ https://pa-report-en.zplayads.com
 
 ### Interface limitation
 * Signature is used to verify permission
-* Verification is approved, same resource is limited to request 100 times per day
 
 ### Interface Verification
 Once verification is approved, advertisers need to pass 3 parameters in their requests
@@ -64,7 +63,6 @@ http status code | Explanation
 200 | Success
 400 | Request parameter error, please check parameters
 401 | User verification error, please check verification information
-403 | Access denied, possibly because of request limit
 500 | Server error
 
 
@@ -166,7 +164,7 @@ advertiser_account_id | string | path | Account_id
 app_id | string | path | App id
 ad_id | string | path | Ad id
 page | int | query | page number, optional, default is 1
-size | int | query | quantity, optional, default is 20, maximum is 50.
+size | int | query | quantity, optional, default is 20
 start_date | int | query | Date starts, optional, format is YMD, eg: 20171106
 end_date | int | query | Date finishes, optional, format is YMD, eg: 20171106
 tz | int | query | UTC Time Zone，Optional，default is 8, means UTC+8. For example, 0, 1, -8, etc

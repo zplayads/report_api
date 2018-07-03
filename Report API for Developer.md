@@ -13,7 +13,6 @@ https://pa-report-en.zplayads.com
 
 ### 1.4 Interface limit
 * Signature is used to verify permission
-* After verification, the same resource is limited to request 100 times a day
 
 ### 1.5 Interface Verification
 After verification is approved, developers need to pass 3 parameters in their requests
@@ -64,7 +63,6 @@ http status code | explanation
 200 | Success
 400 | Request parameter error, please check parameters
 401 | User verification error, please check verification information
-403 | Access denied, possibly because of request limit
 500 | Server error
 
 ## 2. App List Interface
@@ -170,7 +168,7 @@ Field | Data Type | 位置 | Description
 developer_account_id | string | path |  Developer id
 app_id | string | path | App id
 page | int | query | Page number, optional, defaults 1
-size | int | query | The number of data, optional, Defaults 20, no more than 50 
+size | int | query | The number of data, optional, Defaults 20
 start_date | int | query | Start Date, optional, time format: Ymd, Sample: 20171106
 end_date | int | query | End Date, optional, time format:Ymd, Sample: 20171106
 tz | int | query | Time Zone，Optional，default is 8. Sample: 0, 1, -8, etc
