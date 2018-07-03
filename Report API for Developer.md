@@ -5,7 +5,7 @@ https://pa-report-en.zplayads.com
 
 ### 1.2 Requirements
 * Account approved
-* Developer id and key, please contact our BD manager to get them
+* Developer id and key, please click on the Account Information link in the left menu on the ZPLAY dashboard. Your ID and API key will be shown at the bottom of this page
 
 ### 1.3 Interface Style
 * restfull api
@@ -36,7 +36,7 @@ private function checkSignature()
   $timestamp = $_GET["timestamp"];
   $nonce = $_GET["nonce"];	
 
-  $token = TOKEN; // API Key, you can get it on ZPLAY Ads
+  $token = TOKEN; // API Key, you can get it on ZPLAY dashboard(log in and click on the Account Information link in the left menu, then you can see it at the bottom of this page)
   $tmpArr = array($token, $timestamp, $nonce);
   sort($tmpArr, SORT_STRING);
   $tmpStr = implode( $tmpArr );
@@ -53,8 +53,8 @@ private function checkSignature()
 ### 1.6 Data Format of Response
 * json
 * Field instruction
-  * error: error message, prompt when quest is incorrect
-  * data: data related information
+    * error: error message, prompt when quest is incorrect
+    * data: data related information
   
 ### 1.7 http status code and explanations
 
@@ -100,11 +100,11 @@ developer_account_id | string | path | Developer id
 }
 ```
 
-#### 2.4 Data Instroction
+#### Data Instruction
 
 Name | Data type | Instruction
 ---|---|--
-app_id | string | App id, you can get App id on ZPLAY Ads
+app_id | string | App id, you can get App id on ZPLAY dashboard
 name | string | App Name
 os | string | Operation System 
 
@@ -147,7 +147,7 @@ app_id | string | path | App id
 Name | Data Type | Description
 ---|---|--
 app_id | string | App id
-ad_unit_id | string | Ad Unit id, you can get Ad Unit id on ZPLAY Ads
+ad_unit_id | string | Ad Unit id, you can get Ad Unit id on ZPLAY dashboard
 name | string | Ad Unit Name
 ad_type|enum|Ad type: 1=>Interstitial, 4=>Rewarded Video
 
@@ -171,8 +171,8 @@ page | int | query | Page number, optional, defaults 1
 size | int | query | The number of data, optional, Defaults 20
 start_date | int | query | Start Date, optional, time format: Ymd, Sample: 20171106
 end_date | int | query | End Date, optional, time format:Ymd, Sample: 20171106
-tz | int | query | Time Zone，Optional，default is 8. Sample: 0, 1, -8, etc
-group_dimension | string | query | group by dimension，Optional，default is null ,Sample: country
+tz | int | query | Time Zone，Optional,default is 8. Sample: 0, 1, -8, etc
+group_dimension | string | query | group by dimension, Optional, default is null, now support: country
 
 ### 4.3 Response
 #### Sample
@@ -219,5 +219,5 @@ play_finish | int | End
 imp | int | Impression
 click | int | Click
 request | int | Request
-income | int | Revenue, current: cent
-
+income | int | Revenue, currency unit: cent
+country | string | This field will be shown if you request the data by country
