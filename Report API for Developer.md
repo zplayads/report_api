@@ -23,13 +23,14 @@ signature | string | query | Encrypted signature, signature combines the API key
 timestamp | int | query | Unix timestamp eg. 1534305711 [reference address](http://timestamp.online/)
 nonce | int | query | Random number, should be a positive integer
 
-Encryption/examination process:
+**Encryption/examination process:**
 1. Sort API Key, timestamp and nonce in alphabetical order
 2. Put the three parameter strings in one string to encrypt with sha1
 3. Compare the encrypted string with signature, identify the request as legitimate
 
-Check the PHP sample code in signature:
-```
+*Check the PHP sample code in signature:*
+
+```php
 private function checkSignature()
 {
   $signature = $_GET["signature"];
@@ -82,7 +83,7 @@ developer_account_id | string | path | Developer id
 ### 2.3 Response
 #### Sample
 
-```
+```json
 {
     "error": "",
     "data": [
@@ -128,7 +129,7 @@ app_id | string | path | App id
 ### 3.3 Response
 #### Sample
 
-```
+```json
 {
     "error": "",
     "data": [
@@ -177,7 +178,7 @@ group_dimension | string | query | group by dimension, Optional, default is null
 ### 4.3 Response
 #### Sample
 
-```
+```json
 {
     "error": "",
     "data": {
