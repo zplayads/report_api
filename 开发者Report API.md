@@ -23,12 +23,13 @@ signature | string | query | 加密签名，signature结合了开发者的API Ke
 timestamp | int | query | 时间戳，比如：1534305711，[参考地址](https://tool.lu/timestamp/)。
 nonce | int | query | 随机数，必须是正整数。
 
-加密/校验流程如下：
+**加密/校验流程如下：**
 1. 将API Key、timestamp、nonce三个参数进行字典序排序
 2. 将三个参数字符串拼接成一个字符串进行sha1加密
 3. 开发者获得加密后的字符串可与signature对比，标识该请求合法
 
-检验signature的PHP示例代码：
+*检验signature的PHP示例代码：*
+
 ```php
 private function checkSignature()
 {
