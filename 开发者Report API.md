@@ -5,7 +5,7 @@ https://pa-report.zplayads.com
 
 ### 1.2 接入条件
 * 确保账号已经审核通过
-* 需要相关的开发者id和密钥，请登录ZPLAY Ads系统后点击左侧导航的个人信息，在页面的底部进行查看
+* 需要相关的Account ID和API Key，请登录ZPLAY Ads系统后点击左侧导航的个人信息，在页面的底部进行查看
 
 ### 1.3 接口风格
 * 采用restfull api风格
@@ -19,24 +19,24 @@ https://pa-report.zplayads.com
 
 参数 | 类型 | 位置 | 描述
 ---| -- | --- | --
-signature | string | query | 加密签名，signature结合了开发者的密钥参数和请求中的timestamp参数、nonce参数。
-timestamp | int | query | 时间戳
-nonce | int | query | 随机数
+signature | string | query | 加密签名，signature结合了开发者的API Key和请求中的timestamp参数、nonce参数。
+timestamp | int | query | 时间戳，比如：1534305711，[参考地址](https://tool.lu/timestamp/)。
+nonce | int | query | 随机数，必须是正整数。
 
 加密/校验流程如下：
-1. 将token、timestamp、nonce三个参数进行字典序排序
+1. 将API Key、timestamp、nonce三个参数进行字典序排序
 2. 将三个参数字符串拼接成一个字符串进行sha1加密
 3. 开发者获得加密后的字符串可与signature对比，标识该请求合法
 
 检验signature的PHP示例代码：
-```
+```php
 private function checkSignature()
 {
   $signature = $_GET["signature"];
   $timestamp = $_GET["timestamp"];
   $nonce = $_GET["nonce"];  
 
-  $token = TOKEN; // 登录ZPLAY Ads系统后点击左侧导航的个人信息，在页面的底部找到API Key
+  $token = api key; // 登录ZPLAY Ads系统后点击左侧导航的个人信息，在页面的底部找到API Key
   $tmpArr = array($token, $timestamp, $nonce);
   sort($tmpArr, SORT_STRING);
   $tmpStr = implode( $tmpArr );
@@ -83,7 +83,7 @@ developer_account_id | string | path | 开发者id
 ### 2.3 响应
 #### 示例
 
-```
+```json
 {
     "error": "",
     "data": [
@@ -128,7 +128,7 @@ app_id | string | path | 应用id
 ### 3.3 响应
 #### 示例
 
-```
+```json
 {
     "error": "",
     "data": [
@@ -177,7 +177,7 @@ group_dimension | string | query | 分组维度，非必填，默认空，支持
 ### 4.3 响应
 #### 示例
 
-```
+```json
 {
     "error": "",
     "data": {
