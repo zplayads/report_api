@@ -5,7 +5,7 @@ https://pa-report-en.zplayads.com
 
 ### 1.2 Requirements
 * Account approved
-* Developer id and key, please click on the Account Information link in the left menu on the ZPLAY dashboard. Your ID and API key will be shown at the bottom of this page
+* Account id and API Key, please click on the Account Information link in the left menu on the ZPLAY dashboard. Your ID and API key will be shown at the bottom of this page
 
 ### 1.3 Interface Style
 * restfull api
@@ -20,11 +20,11 @@ After verification is approved, developers need to pass 3 parameters in their re
 Parameter | Type | Position | Description
 ---| -- | --- | --
 signature | string | query | Encrypted signature， signature combines the API key parameters with the timestamp parameter in the request, the nonce parameter
-timestamp | int | query | timestamp
-nonce | int | query | Random number
+timestamp | int | query | Unix timestamp eg. 1534305711 [reference address](http://timestamp.online/)
+nonce | int | query | Random number, should be a positive integer
 
 Encryption/examination process:
-1. Sort token, timestamp and nonce in alphabetical order
+1. Sort API Key, timestamp and nonce in alphabetical order
 2. Put the three parameter strings in one string to encrypt with sha1
 3. Compare the encrypted string with signature, identify the request as legitimate
 
@@ -36,7 +36,7 @@ private function checkSignature()
   $timestamp = $_GET["timestamp"];
   $nonce = $_GET["nonce"];	
 
-  $token = TOKEN; // API Key, you can get it on ZPLAY dashboard(log in and click on the Account Information link in the left menu, then you can see it at the bottom of this page)
+  $token = api key; // API Key, you can get it on ZPLAY dashboard(log in and click on the Account Information link in the left menu, then you can see it at the bottom of this page)
   $tmpArr = array($token, $timestamp, $nonce);
   sort($tmpArr, SORT_STRING);
   $tmpStr = implode( $tmpArr );
