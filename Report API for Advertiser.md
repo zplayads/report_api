@@ -175,7 +175,7 @@ group_dimension | string | query | group by dimension, Optional, default is null
 ### 4.3 Response 
 #### Example
 
-```jsoon
+```json
 {
     "error": "",
     "data": {
