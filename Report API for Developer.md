@@ -5,7 +5,7 @@ https://pa-report-en.zplayads.com
 
 ### 1.2 Requirements
 * Account approved
-* Account id and API Key, please click on the Account Information link in the left menu on the ZPLAY dashboard. Your ID and API key will be shown at the bottom of this page
+* Account ID and API Key, please click on the Account Information link in the left menu on the ZPLAY dashboard. Your ID and API key will be shown at the bottom of this page
 
 ### 1.3 Interface Style
 * restfull api
