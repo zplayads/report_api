@@ -19,7 +19,7 @@ After verification is approved, developers need to pass 3 parameters in their re
 
 Parameter | Type | Position | Description
 ---| -- | --- | --
-signature | string | query | Encrypted signature， signature combines the API key parameters with the timestamp parameter in the request, the nonce parameter
+signature | string | query | Encrypted signature, signature combines the API key parameters with the timestamp parameter in the request, the nonce parameter
 timestamp | int | query | Unix timestamp eg. 1534305711 [reference address](http://timestamp.online/)
 nonce | int | query | Random number, should be a positive integer
 
