@@ -1,7 +1,10 @@
 ## 1. Integration Instruction
 
 ### 1.1 Interface address
-https://pa-report-en.zplayads.com
+
+If the settlement currency is Chinese Yuan, please use https://pa-report.zplayads.com
+
+If the settlement currency is United States Dollar, please use https://pa-report-en.zplayads.com
 
 ### 1.2 Integration prerequisites
 * Account has been approved
