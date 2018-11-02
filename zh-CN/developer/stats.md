@@ -39,7 +39,8 @@ group_dimension | string | query | 分组维度，非必填，默认空,示例: 
                 "imp": 4095,
                 "click": 3527,
                 "request": 4740,
-                "income": 306972
+                "income": 306972,
+                "currency":"CNY"
             }
         ]
     }
@@ -66,3 +67,4 @@ imp | int | 展示
 click | int | 点击
 request | int | 请求
 income | int | 收益, 单位为分
+currency | string | 货币类型 CNY：人民币，USD：美元

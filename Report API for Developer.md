@@ -195,7 +195,8 @@ group_dimension | string | query | group by dimension，Optional，default is nu
                 "imp": 4095,
                 "click": 3527,
                 "request": 4740,
-                "income": 306972
+                "income": 306972,
+                 "currency":"CNY"
             }
         ]
     }
@@ -222,4 +223,5 @@ imp | int | Impression
 click | int | Click
 request | int | Request
 income | int | Revenue, current: cent
+currency | string | Currency type CNY，USD
 
