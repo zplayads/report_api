@@ -197,7 +197,9 @@ group_dimension | string | query | group by dimension, Optional, default is null
                 "imp": 4095,
                 "click": 3527,
                 "request": 4740,
-                "income": 306972
+                "income": 306972,
+                "currency":"CNY"
+
             }
         ]
     }
@@ -225,3 +227,4 @@ click | int | Click
 request | int | Request
 income | int | Revenue, currency unit: cent
 country | string | This field will be shown if you request the data by country
+currency | string | Currency type CNY，USD

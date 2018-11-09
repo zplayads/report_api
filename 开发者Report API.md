@@ -197,7 +197,8 @@ group_dimension | string | query | 分组维度，非必填，默认空，支持
                 "imp": 4095,
                 "click": 3527,
                 "request": 4740,
-                "income": 306972
+                "income": 306972,
+                "currency":"CNY"
             }
         ]
     }
@@ -225,3 +226,5 @@ click | int | 点击
 request | int | 请求
 income | int | 收益, 单位为分
 country | string | 国家，如果在请求中填写了group_dimension=country则会显示，如果没有填写，则不显示
+currency | string | 货币类型 CNY：人民币，USD：美元
+

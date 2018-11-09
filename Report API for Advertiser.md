@@ -194,6 +194,7 @@ group_dimension | string | query | group by dimension, Optional, default is null
                 "cost": 211400,
                 "ctr": 0.88,
                 "ecpm": 47752.43,
+                "currency":"CNY",
                 "cpc": 54.08,
                 "cpi": 61.83
             }
@@ -223,3 +224,4 @@ ecpm | float | eCPM
 cpc | float | CPC
 cpi | float | CPI
 country | string | This field will be shown if you request the data by country
+currency | string | Currency type CNY，USD
