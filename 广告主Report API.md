@@ -192,6 +192,7 @@ group_dimension | string | query | 分组维度，非必填，默认空，支持
                 "click": 3909,
                 "cost": 211400,
                 "cvr": "882.99‰",
+                "currency":"CNY",
                 "cpc": 54.08,
                 "cpi": 61.83
             }
@@ -221,3 +222,4 @@ cvr | string | 激活率(千分比)
 cpc | float | cpc
 cpi | float | cpi
 country | string | 国家，如果在请求中填写了group_dimension=country则会显示，如果没有填写，则不显示
+currency | string | 货币类型 CNY：人民币，USD：美元
