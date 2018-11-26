@@ -1,43 +1,46 @@
-# Interface Integration Instruction
+## 1. Integration Instruction
 
-### Interface address
-https://pa-report-en.zplayads.com
+### 1.1 Interface address
 
-### Integration prerequisites
+If the settlement currency is Chinese Yuan, please use https://pa-report.zplayads.com
+
+If the settlement currency is United States Dollar, please use https://pa-report-en.zplayads.com
+
+### 1.2 Integration prerequisites
 * Account has been approved
-* Please contact BD manager to receive Advertiser ID and key
+* Account ID and API Key, please click on the Account Information link in the left menu on the ZPLAY dashboard. Your ID and API key will be shown at the bottom of this page
 
-### Interface style 
+### 1.3 Interface style 
 * restfull api
 * Use http status code to indicate the status of request resources
 
-### Interface limitation
+### 1.4 Interface limitation
 * Signature is used to verify permission
-* Verification is approved, same resource is limited to request 100 times per day
 
-### Interface Verification
+### 1.5 Interface Verification
 Once verification is approved, advertisers need to pass 3 parameters in their requests
 
 Parameter | Type | Position | Description
 ---| -- | --- | --
-signature | string | query | Encrypted signature, signature combines the API key parameters with the timestamp parameter and the nonce parameter in the request
-timestamp | int | query | timestamp
-nonce | int | query | Random number
+signature | string | query | Encrypted signature, signature combines the API Key parameters with the timestamp parameter and the nonce parameter in the request
+timestamp | int | query | Unix timestamp eg. 1534305711 [reference address](http://timestamp.online/)
+nonce | int | query | Random number, should be a positive integer
 
-Encryption/examination process:
-1.	Sort token, timestamp and nonce in alphabetical order
+**Encryption/examination process:**
+1.	Sort API Key, timestamp and nonce in alphabetical order
 2.	Put the three parameter strings in one string to encrypt with sha1
 3.	Compare the encrypted string with signature, identify the request as legitimate
 
-Verify the PHP sample code in signature:：
-```
+*Verify the PHP sample code in signature:*
+
+```php
 private function checkSignature()
 {
   $signature = $_GET["signature"];
   $timestamp = $_GET["timestamp"];
   $nonce = $_GET["nonce"];
 
-  $token = TOKEN; // Via BD to get API key
+  $token = api key; // API Key, you can get it on ZPLAY dashboard(log in and click on the Account Information link in the left menu, then you can see it at the bottom of this page)
   $tmpArr = array($token, $timestamp, $nonce);
   sort($tmpArr, SORT_STRING);
   $tmpStr = implode( $tmpArr );
@@ -51,41 +54,40 @@ private function checkSignature()
 }
 ```
 
-### Data Format of Response
+### 1.6 Data Format of Response
 * json
 * Field instruction
-  * Error: error message, prompt when quest is incorrect
-  * Data: data related information
+    * Error: error message, prompt when quest is incorrect
+    * Data: data related information
 
-### http status code and explanations
+### 1.7 http status code and explanations
 
 http status code | Explanation
 ---|---
 200 | Success
 400 | Request parameter error, please check parameters
 401 | User verification error, please check verification information
-403 | Access denied, possibly because of request limit
 500 | Server error
 
 
-# App List Interface
+## 2. App List Interface
 
-## Interface Information
+### 2.1 Interface Information
 
 url | method | Description
 ---|---|--
 advertiser/{advertiser_account_id}/apps | GET | Get Applist
 
-## Request information
+### 2.2 Request information
 
 Field | Data Type | Position | Description
 ---|---|--|--
 advertiser_account_id | string | path | Account id
 
-## Response
-### Example
+### 2.3 Response
+#### Example
 
-```
+```json
 {
     "error": "",
     "data": [
@@ -103,34 +105,34 @@ advertiser_account_id | string | path | Account id
 }
 ```
 
-### Data Field Description
+#### Data Field Description
 
 Name | Data Type | Description
 ---|---|--
-app_id | string | App id, which you can get on ZPLAY Ads
+app_id | string | App id, which you can get on ZPLAY dashboard
 name | string | Application name
 os | string | Operation System
 
 
-# Advertise Unit List Interface
+## 3. Advertise campaign List Interface
 
-## Interface Information
+### 3.1 Interface Information
 
 url | method | Description
 ---|---|--
-advertiser/{advertiser_account_id}/app/{app_id}/ads | GET | get ad list of a particular application
+advertiser/{advertiser_account_id}/app/{app_id}/ads | GET | get campaign list of a particular application
 
-## Request Information
+### 3.2 Request Information
 
 Field | Data Type | Position | Description
 ---|---|--|--
 advertiser_account_id | string | path | Account_id
 app_id | string | path | App id
 
-## Response
-### Example
+### 3.3 Response
+#### Example
 
-```
+```json
 {
     "error": "",
     "data": [
@@ -142,7 +144,7 @@ app_id | string | path | App id
 }
 ```
 
-### Data Field Description
+#### Data Field Description
 
 Name | Data Type | Instruction
 ---|---|--
@@ -150,15 +152,15 @@ ad_id | string | Ad id
 name | string | Ad name
 
 
-# Advertise Statistics Interface
+## 4. Advertise Statistics Interface
 
-## Interface Information
+### 4.1 Interface Information
 
 url | method | Description
 ---|---|--
 advertiser/{advertiser_account_id}/app/{app_id}/ad/{ad_id}/stats | GET | Advertisement Statistics
 
-## Request Parameter
+### 4.2 Request Parameter
 
 Name | Data Type | Position | Description
 ---|---|--|--
@@ -166,16 +168,17 @@ advertiser_account_id | string | path | Account_id
 app_id | string | path | App id
 ad_id | string | path | Ad id
 page | int | query | page number, optional, default is 1
-size | int | query | quantity, optional, default is 20, maximum is 50.
+size | int | query | quantity, optional, default is 20
 start_date | int | query | Date starts, optional, format is YMD, eg: 20171106
 end_date | int | query | Date finishes, optional, format is YMD, eg: 20171106
-tz | int | query | UTC Time Zone，Optional，default is 8, means UTC+8. For example, 0, 1, -8, etc
+tz | int | query | UTC Time Zone, Optional, default is 8, means UTC+8. For example, 0, 1, -8, etc
+group_dimension | string | query | group by dimension, Optional, default is null, now support: country
 
 
-## Response 
-### Example
+### 4.3 Response 
+#### Example
 
-```
+```json
 {
     "error": "",
     "data": {
@@ -184,12 +187,14 @@ tz | int | query | UTC Time Zone，Optional，default is 8, means UTC+8. For exa
             {
                 "ad_id": "DAA6BC97-14DD-6C67-523F-8219C7E79575",
                 "date": 20171101,
+                "country": "CA",
                 "imp": 4427,
                 "active": 3419,
                 "click": 3909,
                 "cost": 211400,
                 "ctr": 0.88,
                 "ecpm": 47752.43,
+                "currency":"CNY",
                 "cpc": 54.08,
                 "cpi": 61.83
             }
@@ -198,14 +203,14 @@ tz | int | query | UTC Time Zone，Optional，default is 8, means UTC+8. For exa
 }
 ```
 
-### Data Field Description
+#### Data Field Description
 
 Name | Data Type | Description
 ---|---|--
 total | int | Total amount
 list | array | Application Statistics
 
-### Application Statistics Interface Description
+#### Application Statistics Interface Description
 
 Name | Data Type | Description
 ---|---|--
@@ -213,8 +218,10 @@ date | int | Date
 ad_id | string | Ad id
 imp | int | Impression 
 active | int | Activate
-cost | float | cost 
-CVR | string | Conversion Rate
+cost | float | cost, currency unit: cent
+CVR | string | Conversion Rate(‰)
 ecpm | float | eCPM
 cpc | float | CPC
 cpi | float | CPI
+country | string | This field will be shown if you request the data by country
+currency | string | Currency type CNY，USD
