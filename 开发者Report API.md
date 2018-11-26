@@ -2,9 +2,9 @@
 
 ### 1.1 接口地址
 
-若您的账户结算方式为人民币，请使用 https://pa-report.zplayads.com
+若您在中国大陆，请使用 https://pa-report.zplayads.com
 
-若您的账户结算方式为美元，请使用 https://pa-report-en.zplayads.com
+若您在中国大陆以外地区，请使用 https://pa-report-en.zplayads.com
 
 ### 1.2 接入条件
 * 确保账号已经审核通过
