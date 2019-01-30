@@ -165,9 +165,9 @@ url | method | Description
 ---|---|--
 developer/{developer_account_id}/app/{app_id}/stats | GET | Application Statistics 
 
-### 4.2 请求参数
+### 4.2 Request Parameter
 
-Field | Data Type | 位置 | Description
+Field | Data Type | Position | Description
 ---|---|--|--
 developer_account_id | string | path |  Developer id
 app_id | string | path | App id
